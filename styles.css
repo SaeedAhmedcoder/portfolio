@@ -4,55 +4,34 @@
    ============================================================ */
 
 /* ---------- Base ---------- */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    margin: 0;
-    padding-top: 70px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #2c3e50;
     background-color: #f8f9fa;
     line-height: 1.6;
+    padding-top: 70px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
+    letter-spacing: -1px;
     color: #1a1a2e;
 }
 
-/* ---------- Hero Section ---------- */
+/* ---------- Hero ---------- */
 .hero-section {
     background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     border-left: 6px solid #0d6efd;
-    border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-section:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 32px rgba(13, 110, 253, 0.15);
-}
-
-.hero-section h1 {
-    letter-spacing: -1px;
-    font-weight: 700;
+    box-shadow: 0 16px 32px rgba(13, 110, 253, 0.15) !important;
 }
 
 .hero-img {
-    width: 100%;
     max-height: 340px;
     object-fit: cover;
-    border-radius: 12px;
     transition: transform 0.4s ease;
 }
 
@@ -62,29 +41,28 @@ h6 {
 
 /* ---------- Cards ---------- */
 .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     border-radius: 14px;
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12) !important;
 }
 
 .card-hover .card-title {
-    margin-bottom: 0.75rem;
     font-weight: 700;
     color: #0d6efd;
+    margin-bottom: 0.75rem;
 }
 
 /* ---------- Buttons ---------- */
 #ctaButton {
-    border: none;
-    border-radius: 50px;
     background-color: #0d6efd;
+    border: none;
     font-weight: 600;
-    padding: 10px 22px;
+    border-radius: 50px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -93,19 +71,18 @@ h6 {
     transform: scale(1.05);
 }
 
-/* ---------- Live Clock ---------- */
+/* ---------- Live clock ---------- */
 #liveClock {
-    display: inline-block;
-    padding: 0.2rem 0.8rem;
-    border: 1px solid rgba(13, 110, 253, 0.2);
-    border-radius: 8px;
-    background-color: #ffffff;
+    font-family: 'Courier New', monospace;
     color: #0d6efd;
-    font-family: "Courier New", monospace;
+    background-color: #ffffff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(13, 110, 253, 0.2);
     letter-spacing: 1px;
 }
 
-/* ---------- Service Items ---------- */
+/* ---------- Dropdown items ---------- */
 [data-service] {
     cursor: pointer;
     font-weight: 500;
@@ -120,7 +97,6 @@ h6 {
 /* ---------- Navbar ---------- */
 .navbar-brand {
     font-size: 1.4rem;
-    font-weight: 600;
     letter-spacing: 0.5px;
 }
 
@@ -132,13 +108,6 @@ h6 {
     color: #90caf9 !important;
 }
 
-/* ---------- Dropdown ---------- */
-.dropdown-menu {
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
 /* ---------- Footer ---------- */
 .site-footer {
     background-color: #111827;
@@ -148,15 +117,14 @@ h6 {
 
 .site-footer h5,
 .site-footer h6 {
-    color: #ffffff;
     letter-spacing: 0.4px;
 }
 
 .footer-links a {
-    display: inline-block;
-    padding: 2px 0;
     color: #9ca3af;
     text-decoration: none;
+    display: inline-block;
+    padding: 2px 0;
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -165,27 +133,15 @@ h6 {
     transform: translateX(3px);
 }
 
-/* ---------- Links ---------- */
-a {
-    transition: color 0.2s ease;
-}
-
-/* ---------- Images ---------- */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* ---------- Responsive Design ---------- */
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-
     body {
         padding-top: 60px;
     }
 
     .hero-section {
-        padding: 1.5rem !important;
         text-align: center;
+        padding: 1.5rem !important;
     }
 
     .hero-section h1 {
@@ -205,30 +161,7 @@ img {
     .site-footer {
         text-align: center;
     }
-
-    .footer-links a {
-        transform: none;
-    }
-
-    .footer-links a:hover {
-        transform: none;
-    }
 }
-
-/* ---------- Small Screens ---------- */
-@media (max-width: 576px) {
-
-    body {
-        padding-top: 56px;
-    }
-
-    .hero-section h1 {
-        font-size: 1.7rem;
-    }
-
-    .hero-section p {
-        font-size: 0.95rem;
-    }
 
     #ctaButton {
         width: 100%;
