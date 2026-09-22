@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaeedTech Studio · Home</title>
+
+    <!-- Bootstrap 5.3.8 + jQuery -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"
+            integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+
+    <!-- Custom stylesheet -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">✨ SaeedTech Studio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== MAIN ========== -->
+<main class="container mt-5 pt-4">
+
+    <!-- HERO with image -->
+    <section class="hero-section p-4 p-md-5 mb-5 rounded-4 shadow-sm">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-3">Keep Learning. Keep Growing.</h1>
+                <p class="lead mb-4">
+                    Your journey to knowledge starts with curiosity.
+                    Explore fascinating questions and make every moment an opportunity to learn.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="gallery.html" class="btn btn-primary btn-lg px-4">See our work →</a>
+                    <a href="contact.html" class="btn btn-outline-dark btn-lg px-4">Get in touch</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="hero.bmp"
+                     alt="Team collaborating in a creative studio"
+                     class="img-fluid rounded-4 hero-img shadow-sm">
+            </div>
+        </div>
+    </section>
+
+    <!-- THREE CARDS -->
+    <section class="row g-4 mb-5">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 card-hover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">🎬 Content Creator</h5>
+                    <p class="card-text flex-grow-1">
+                        Creating engaging digital content that informs, entertains, and inspires people through creative ideas and modern media.
+                    </p>
+                    <a href="services.html" class="btn btn-outline-dark btn-sm mt-2 align-self-start">Learn more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 card-hover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">💻 Web Development</h5>
+                    <p class="card-text flex-grow-1">
+                        Building clean, responsive, and user-friendly websites with a focus on modern design, functionality, and performance.
+                    </p>
+                    <a href="services.html" class="btn btn-outline-dark btn-sm mt-2 align-self-start">Learn more</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 card-hover">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">🚀 Entrepreneur</h5>
+                    <p class="card-text flex-grow-1">
+                        Turning creative ideas into meaningful projects and exploring new opportunities through innovation, learning, and problem-solving.
+                    </p>
+                    <a href="gallery.html" class="btn btn-outline-dark btn-sm mt-2 align-self-start">View gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE DROPDOWN -->
+    <section class="row align-items-center bg-white p-4 rounded-4 shadow-sm mb-5 g-3">
+        <div class="col-md-8">
+            <h3 class="h4 mb-1">What’s your next project?</h3>
+            <p class="mb-0 text-muted">Choose a service to see a tailored tip from our team.</p>
+        </div>
+        <div class="col-md-4">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="serviceDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    Pick a service
+                </button>
+                <ul class="dropdown-menu w-100" aria-labelledby="serviceDropdown">
+                    <li><a class="dropdown-item" href="#" data-service="brand">Brand Identity</a></li>
+                    <li><a class="dropdown-item" href="#" data-service="web">Web Development</a></li>
+                    <li><a class="dropdown-item" href="#" data-service="visual">Visual Content</a></li>
+                </ul>
+            </div>
+            <div id="dropdownFeedback" class="mt-2 small text-muted fst-italic"></div>
+        </div>
+    </section>
+
+    <!-- LIVE CLOCK -->
+    <div class="alert alert-info d-flex justify-content-between align-items-center flex-wrap gap-2 rounded-4"
+         role="alert">
+        <span>⏱️ Live studio time:</span>
+        <span id="liveClock" class="fw-bold fs-5">--:--:--</span>
+    </div>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer text-white-50 py-5 mt-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h5 class="text-white mb-3">✨SaeedTech Studio</h5>
+                <p class="small mb-0">
+                    A creative studio blending design, code, and story. Based in Berlin, working worldwide.
+                </p>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6 class="text-white mb-3">Explore</h6>
+                <ul class="list-unstyled small footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-2">
+                <h6 class="text-white mb-3">Services</h6>
+                <ul class="list-unstyled small footer-links">
+                    <li><a href="services.html">Brand Identity</a></li>
+                    <li><a href="services.html">Web Development</a></li>
+                    <li><a href="services.html">Visual Content</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white mb-3">Say hello</h6>
+                <p class="small mb-1">saeedahmed03222437185@gmail.com</p>
+                <p class="small mb-0">03555529329</p>
+            </div>
+        </div>
+        <hr class="border-secondary my-4">
+        <p class="text-center small mb-0">© 2026 Saeed Ahmed — Create · Learn · Grow</p>
+    </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+    // Dropdown feedback
+    document.querySelectorAll('.dropdown-item[data-service]').forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const service = this.getAttribute('data-service');
+            const feedback = document.getElementById('dropdownFeedback');
+            const messages = {
+                brand: '🎨 Brand tip: Consistency across all touchpoints builds trust.',
+                web:   '⚡ Web tip: Always optimise images for faster load times.',
+                visual:'📷 Visual tip: Natural light often creates the most authentic feel.'
+            };
+            feedback.textContent = messages[service] || '';
+        });
+    });
+
+    // Live clock
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('liveClock').textContent =
+            now.toLocaleTimeString('en-GB', { hour12: false });
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
