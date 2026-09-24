@@ -14,6 +14,18 @@
             crossorigin="anonymous"></script>
 
     <link href="styles.css" rel="stylesheet">
+
+    <!-- Dark Mode CSS -->
+    <style>
+        body, .gallery-item, .navbar, footer {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark-mode { background-color: #121212; color: #e0e0e0; }
+        body.dark-mode .navbar { background-color: #0a0a0a !important; }
+        body.dark-mode .text-muted { color: #b0b0b0 !important; }
+        body.dark-mode .gallery-item { background-color: #1e1e1e; padding: 20px; border-radius: 15px; border: 1px solid #333; }
+        body.dark-mode .site-footer { background-color: #0a0a0a; border-top: 1px solid #333; }
+    </style>
 </head>
 <body>
 
@@ -26,11 +38,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <!-- DARK MODE TOGGLE BUTTON -->
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                        🌙 Dark
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
@@ -41,59 +59,69 @@
 
     <header class="text-center mb-5">
         <h1 class="display-5 fw-bold">My Creative Journey</h1>
-        <p class="lead text-muted">A collection of projects, designs, experiments, and ideas I've created while learning, building, and growing.</p>
+        <p class="lead text-muted">
+            A collection of projects, designs, experiments, and ideas I've created while learning, building, and growing.
+        </p>
     </header>
 
     <!-- IMAGE GRID -->
     <section class="container my-5">
-    <!-- First Photo (Centered) -->
-    <div class="row justify-content-center mb-5">
-        <div class="col-12 col-md-8 text-center">
-            <figure class="gallery-item">
-                <img src="pr1.jfif" alt="Tech Reviews Channel" class="img-fluid rounded shadow-sm">
-                <figcaption class="mt-3">
-                    <h3 class="h5">🎬 TitanTiger Studios — YouTube Channel</h3>
-                    <p class="text-muted">TitanTiger Studios is my YouTube channel where I create and edit AI-generated and real Marvel superhero Shorts, combining cinematic visuals, action, and creative editing.</p>
-                    <ul>
-    <li><strong>Channel:</strong> TitanTiger Studios</li>
-    <li><strong>Subscribers:</strong> 5.39K+</li>
-    <li><strong>Videos:</strong> 101+</li>
-    <li><strong>Content:</strong> Marvel & Superhero Shorts</li>
-    <li><strong>Style:</strong> AI-Generated & Real Footage</li>
-    <li><strong>Skills:</strong> AI Creation, Video Editing & Storytelling</li>
-</ul>
-                </figcaption>
-            </figure>
-        </div>
-    </div>
 
-    <!-- Second Photo (Appears on Scroll) -->
-    <div class="row justify-content-center mb-5 scroll-reveal">
-        <div class="col-12 col-md-8 text-center">
-            <figure class="gallery-item">
-                <img src="pr2.jfif" alt="sport Channel" class="img-fluid rounded shadow-sm">
-                <figcaption class="mt-3">
-                    <h3 class="h5">🎬 Fun With Saeed — Second Channel</h3>
-                    <p class="text-muted">Fun With Saeed is my YouTube channel where I create and edit entertaining sports Shorts, featuring football moments, famous players, funny clips, and trending sports content.</p>
-                    <ul>
-    <li><strong>Channel:</strong> Fun With Saeed</li>
-    <li><strong>Subscribers:</strong> 1.48K+</li>
-    <li><strong>Videos:</strong> 18+</li>
-    <li><strong>Content:</strong> Sports & Football Shorts</li>
-    <li><strong>Style:</strong> Edited Real Sports Footage</li>
-    <li><strong>Skills:</strong> Video Editing, Sports Content & Creative Editing</li>
-</ul>
-                </figcaption>
-            </figure>
+        <!-- First Project -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 col-md-8 text-center">
+                <figure class="gallery-item">
+                    <img src="pr1.jfif" alt="TitanTiger Studios YouTube channel" class="img-fluid rounded-3">
+                    <figcaption class="mt-3">
+                        <h3 class="h5">🎬 TitanTiger Studios — YouTube Channel</h3>
+                        <p class="text-muted">
+                            TitanTiger Studios is my YouTube channel where I create and edit AI-generated and real
+                            Marvel superhero Shorts, combining cinematic visuals, action, and creative editing.
+                        </p>
+                        <ul class="list-unstyled text-start d-inline-block">
+                            <li><strong>Channel:</strong> TitanTiger Studios</li>
+                            <li><strong>Subscribers:</strong> 5.39K+</li>
+                            <li><strong>Videos:</strong> 101+</li>
+                            <li><strong>Content:</strong> Marvel &amp; Superhero Shorts</li>
+                            <li><strong>Style:</strong> AI-Generated &amp; Real Footage</li>
+                            <li><strong>Skills:</strong> AI Creation, Video Editing &amp; Storytelling</li>
+                        </ul>
+                    </figcaption>
+                </figure>
+            </div>
         </div>
-    </div>
-</section>
 
-<section class="text-center mb-5">
-    <h2 class="h4">My YouTube Journey</h2>
-    <p class="lead">I run two channels — TitanTiger Studios and Fun With Saeed.</p>
-    <a href="contact.html" class="btn btn-primary btn-lg px-4 mt-2">Let’s Connect →</a>
-</section>
+        <!-- Second Project -->
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 col-md-8 text-center">
+                <figure class="gallery-item">
+                    <img src="pr2.jfif" alt="Fun With Saeed sports channel" class="img-fluid rounded-3">
+                    <figcaption class="mt-3">
+                        <h3 class="h5">🎬 Fun With Saeed — Second Channel</h3>
+                        <p class="text-muted">
+                            Fun With Saeed is my YouTube channel where I create and edit entertaining sports Shorts,
+                            featuring football moments, famous players, funny clips, and trending sports content.
+                        </p>
+                        <ul class="list-unstyled text-start d-inline-block">
+                            <li><strong>Channel:</strong> Fun With Saeed</li>
+                            <li><strong>Subscribers:</strong> 1.48K+</li>
+                            <li><strong>Videos:</strong> 18+</li>
+                            <li><strong>Content:</strong> Sports &amp; Football Shorts</li>
+                            <li><strong>Style:</strong> Edited Real Sports Footage</li>
+                            <li><strong>Skills:</strong> Video Editing, Sports Content &amp; Creative Editing</li>
+                        </ul>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="text-center mb-5">
+        <h2 class="h4">My YouTube Journey</h2>
+        <p class="lead">I run two channels — TitanTiger Studios and Fun With Saeed.</p>
+        <a href="contact.html" class="btn btn-primary btn-lg px-4 mt-2">Let’s Connect →</a>
+    </section>
 
 </main>
 
@@ -104,7 +132,7 @@
             <div class="col-md-4">
                 <h5 class="text-white mb-3">✨ SaeedTech Studio</h5>
                 <p class="small mb-0">
-                    A creative studio blending design, code, and story. Based in Berlin, working worldwide.
+                    A creative studio blending content, code, and story. Based in Karachi, Pakistan — working worldwide.
                 </p>
             </div>
             <div class="col-6 col-md-2">
@@ -119,21 +147,44 @@
             <div class="col-6 col-md-2">
                 <h6 class="text-white mb-3">Services</h6>
                 <ul class="list-unstyled small footer-links">
-                    <li><a href="services.html">Brand Identity</a></li>
+                    <li><a href="services.html">Content Creator</a></li>
                     <li><a href="services.html">Web Development</a></li>
-                    <li><a href="services.html">Visual Content</a></li>
+                    <li><a href="services.html">Entrepreneurship</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
                 <h6 class="text-white mb-3">Say hello</h6>
                 <p class="small mb-1">saeedahmed03222437185@gmail.com</p>
-                <p class="small mb-0">03555529329</p>
+                <p class="small mb-0">+92 355 552 9329</p>
             </div>
         </div>
         <hr class="border-secondary my-4">
         <p class="text-center small mb-0">© 2026 Saeed Ahmed — Create · Learn · Grow</p>
     </div>
 </footer>
+
+<!-- JS: Dark Mode Logic -->
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️ Light';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️ Light';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggle.textContent = '🌙 Dark';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
 
 </body>
 </html>
