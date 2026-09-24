@@ -16,6 +16,77 @@
 
     <!-- Custom stylesheet -->
     <link href="styles.css" rel="stylesheet">
+
+    <!-- Custom Dark Mode Overrides (Add this to your styles.css eventually) -->
+            <style>
+        /* Smooth transition for all elements */
+        body, .hero-section, .card, .navbar, footer, .alert, .bg-white {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Navbar in dark mode */
+        body.dark-mode .navbar {
+            background-color: #0a0a0a !important;
+        }
+
+        /* HERO SECTION BACKGROUND */
+        body.dark-mode .hero-section {
+            background-color: #1e1e1e !important; 
+            border-left: 5px solid #0d6efd; 
+        }
+
+        /* FIX: Force the heading and paragraph to be WHITE */
+        body.dark-mode .hero-section h1,
+        body.dark-mode .hero-section p,
+        body.dark-mode .hero-section .lead {
+            background-color: transparent !important;
+            color: #ffffff !important;
+        }
+
+        /* Make the paragraph bold and slightly lighter gray */
+        body.dark-mode .hero-section .lead {
+            font-weight: 700 !important; 
+            color: #d1d1d1 !important; 
+        }
+
+        /* Cards in dark mode */
+        body.dark-mode .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+        }
+        
+        body.dark-mode .card-text {
+            color: #b0b0b0;
+        }
+
+        /* The white section (dropdown) in dark mode */
+        body.dark-mode .bg-white {
+            background-color: #1e1e1e !important;
+            border: 1px solid #333;
+        }
+
+        /* Buttons in dark mode */
+        body.dark-mode .btn-outline-dark {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        body.dark-mode .btn-outline-dark:hover {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
+        /* Footer in dark mode */
+        body.dark-mode .site-footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid #333;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,11 +99,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                 <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <!-- DARK MODE TOGGLE BUTTON -->
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                        🌙 Dark
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
@@ -57,7 +134,7 @@
             </div>
             <div class="col-lg-6 text-center">
                 <img src="2.png"
-                     alt="Team collaborating in a creative studio"
+                     alt="SaeedTech Studio workspace"
                      class="img-fluid rounded-4 hero-img shadow-sm">
             </div>
         </div>
@@ -138,9 +215,9 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-md-4">
-                <h5 class="text-white mb-3">✨SaeedTech Studio</h5>
+                <h5 class="text-white mb-3">✨ SaeedTech Studio</h5>
                 <p class="small mb-0">
-                    A creative studio blending design, code, and story. Based in Berlin, working worldwide.
+                    A creative studio blending content, code, and story. Based in Karachi, Pakistan — working worldwide.
                 </p>
             </div>
             <div class="col-6 col-md-2">
@@ -155,15 +232,15 @@
             <div class="col-6 col-md-2">
                 <h6 class="text-white mb-3">Services</h6>
                 <ul class="list-unstyled small footer-links">
-                    <li><a href="services.html">Brand Identity</a></li>
+                    <li><a href="services.html">Content Creator</a></li>
                     <li><a href="services.html">Web Development</a></li>
-                    <li><a href="services.html">Visual Content</a></li>
+                    <li><a href="services.html">Entrepreneurship</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
                 <h6 class="text-white mb-3">Say hello</h6>
                 <p class="small mb-1">saeedahmed03222437185@gmail.com</p>
-                <p class="small mb-0">03555529329</p>
+                <p class="small mb-0">+92 355 552 9329</p>
             </div>
         </div>
         <hr class="border-secondary my-4">
@@ -173,6 +250,31 @@
 
 <!-- ========== JAVASCRIPT ========== -->
 <script>
+    // --- DARK MODE LOGIC ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check local storage for saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️ Light';
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️ Light';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggle.textContent = '🌙 Dark';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // --- EXISTING LOGIC ---
     // Dropdown feedback
     document.querySelectorAll('.dropdown-item[data-service]').forEach(item => {
         item.addEventListener('click', function (e) {
@@ -180,9 +282,9 @@
             const service = this.getAttribute('data-service');
             const feedback = document.getElementById('dropdownFeedback');
             const messages = {
-                brand: '🎨 Brand tip: Consistency across all touchpoints builds trust.',
-                web:   '⚡ Web tip: Always optimise images for faster load times.',
-                visual:'📷 Visual tip: Natural light often creates the most authentic feel.'
+                brand:  '🎨 Brand tip: Consistency across all touchpoints builds trust.',
+                web:    '⚡ Web tip: Always optimise images for faster load times.',
+                visual: '📷 Visual tip: Natural light often creates the most authentic feel.'
             };
             feedback.textContent = messages[service] || '';
         });
