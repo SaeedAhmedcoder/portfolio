@@ -14,6 +14,22 @@
             crossorigin="anonymous"></script>
 
     <link href="styles.css" rel="stylesheet">
+
+    <!-- Dark Mode CSS -->
+    <style>
+        body, .card, .navbar, footer, .bg-white, .process-step {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        body.dark-mode { background-color: #121212; color: #e0e0e0; }
+        body.dark-mode .navbar { background-color: #0a0a0a !important; }
+        body.dark-mode .card { background-color: #1e1e1e; border: 1px solid #333; }
+        body.dark-mode .card-text, body.dark-mode .text-muted { color: #b0b0b0 !important; }
+        body.dark-mode .bg-white { background-color: #1e1e1e !important; border: 1px solid #333; }
+        body.dark-mode .btn-outline-dark { color: #ffffff; border-color: #ffffff; }
+        body.dark-mode .btn-outline-dark:hover { background-color: #ffffff; color: #121212; }
+        body.dark-mode .site-footer { background-color: #0a0a0a; border-top: 1px solid #333; }
+        body.dark-mode .process-step { background-color: #0d6efd; color: white; } /* Keeps blue accent */
+    </style>
 </head>
 <body>
 
@@ -26,11 +42,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <!-- DARK MODE TOGGLE BUTTON -->
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                        🌙 Dark
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
@@ -42,7 +64,7 @@
     <!-- PAGE HEADER -->
     <header class="text-center mb-5">
         <h1 class="display-5 fw-bold">What we do</h1>
-        <p class="lead text-muted">Three core services, one goal: helping your brand move forward.</p>
+        <p class="lead text-muted">Three core services, one goal: helping your ideas move forward.</p>
     </header>
 
     <!-- SERVICE CARDS -->
@@ -53,12 +75,12 @@
                     <h3 class="card-title h5">🎬 Content Creator</h3>
                     <p class="card-text flex-grow-1">
                         I create engaging digital content, including videos, AI-generated visuals, and creative media.
-                         My focus is on turning ideas into entertaining and meaningful content that connects with audiences.
+                        My focus is on turning ideas into entertaining and meaningful content that connects with audiences.
                     </p>
                     <ul class="small text-muted ps-3">
-                        <li>Logo &amp; wordmark design</li>
-                        <li>Colour + type system</li>
-                        <li>Brand book &amp; guidelines</li>
+                        <li>AI-generated visuals</li>
+                        <li>Video editing &amp; storytelling</li>
+                        <li>Short-form content for YouTube</li>
                     </ul>
                 </div>
             </div>
@@ -70,7 +92,7 @@
                     <h3 class="card-title h5">💻 Web Development</h3>
                     <p class="card-text flex-grow-1">
                         I design and develop modern, responsive websites that are easy to use and visually appealing.
-                         I focus on clean layouts, smooth user experiences, and practical web solutions.
+                        I focus on clean layouts, smooth user experiences, and practical web solutions.
                     </p>
                     <ul class="small text-muted ps-3">
                         <li>Custom front-end builds</li>
@@ -86,13 +108,14 @@
                 <div class="card-body d-flex flex-column">
                     <h3 class="card-title h5">🚀 Entrepreneur</h3>
                     <p class="card-text flex-grow-1">
-                        I transform ideas into projects by identifying opportunities, learning new skills, and experimenting with creative solutions.
-                         My goal is to build useful digital products and turn innovative ideas into reality.
+                        I transform ideas into projects by identifying opportunities, learning new skills, and
+                        experimenting with creative solutions. My goal is to build useful digital products and turn
+                        innovative ideas into reality.
                     </p>
                     <ul class="small text-muted ps-3">
-                        <li>💡 Develop New Ideas</li>
-                        <li>📊 Plan & Manage Projects</li>
-                        <li>🤝 Build & Grow</li>
+                        <li>💡 Develop new ideas</li>
+                        <li>📊 Plan &amp; manage projects</li>
+                        <li>🤝 Build &amp; grow</li>
                     </ul>
                 </div>
             </div>
@@ -141,7 +164,7 @@
             <div class="col-md-4">
                 <h5 class="text-white mb-3">✨ SaeedTech Studio</h5>
                 <p class="small mb-0">
-                    A creative studio blending design, code, and story. Based in Berlin, working worldwide.
+                    A creative studio blending content, code, and story. Based in Karachi, Pakistan — working worldwide.
                 </p>
             </div>
             <div class="col-6 col-md-2">
@@ -156,21 +179,44 @@
             <div class="col-6 col-md-2">
                 <h6 class="text-white mb-3">Services</h6>
                 <ul class="list-unstyled small footer-links">
-                    <li><a href="services.html">Brand Identity</a></li>
+                    <li><a href="services.html">Content Creator</a></li>
                     <li><a href="services.html">Web Development</a></li>
-                    <li><a href="services.html">Visual Content</a></li>
+                    <li><a href="services.html">Entrepreneurship</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
                 <h6 class="text-white mb-3">Say hello</h6>
                 <p class="small mb-1">saeedahmed03222437185@gmail.com</p>
-                <p class="small mb-0">03555529329</p>
+                <p class="small mb-0">+92 355 552 9329</p>
             </div>
         </div>
         <hr class="border-secondary my-4">
         <p class="text-center small mb-0">© 2026 Saeed Ahmed — Create · Learn · Grow</p>
     </div>
 </footer>
+
+<!-- JS: Dark Mode Logic -->
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️ Light';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️ Light';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeToggle.textContent = '🌙 Dark';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
 
 </body>
 </html>
