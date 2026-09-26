@@ -424,9 +424,21 @@ body.dark-mode .dropdown-item:hover {
 
 /* 11. Live Clock */
 body.dark-mode #liveClock {
-    background-color: #1e1e1e;
-    color: #0d6efd;
-    border: 1px solid #333;
+    background-color: #1e1e1e !important;
+    border: 1px solid #333333 !important;
+    color: #ffffff !important;
+}
+
+/* Live Studio Time label */
+body.dark-mode .alert-info > span:first-child {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+/* Clock numbers */
+body.dark-mode .alert-info > #liveClock {
+    color: #ffffff !important;
+    opacity: 1 !important;
 }
 
 /* 12. Buttons (Outline Dark) */
