@@ -421,6 +421,60 @@ body.dark-mode .dropdown-item:hover {
     color: #ffffff;
 }
 
+/* --- DARK MODE STYLES FOR CERTIFICATE SECTION --- */
+
+/* Main Section Background */
+.dark-mode-cert {
+    background-color: #121212 !important; /* Deep dark background */
+}
+
+/* Card Background */
+.dark-mode-cert .card {
+    background-color: #1e1e1e !important; /* Slightly lighter dark for the card */
+    border: 1px solid #333 !important;
+}
+
+/* Left side (Image container) */
+.dark-mode-cert .bg-white {
+    background-color: #1a1a1a !important; /* Dark background behind the image */
+    border-right: 1px solid #333 !important;
+}
+
+/* Image styling */
+.dark-mode-cert img {
+    filter: brightness(0.85) contrast(1.1);
+    border: 1px solid #444 !important;
+}
+
+/* Right side (Details container) */
+.dark-mode-cert .bg-light {
+    background-color: #252525 !important; /* Dark gray for the text area */
+}
+
+/* Text Colors */
+.dark-mode-cert h3 {
+    color: #ff4d4d !important; 
+}
+.dark-mode-cert h5 {
+    color: #e0e0e0 !important; 
+}
+.dark-mode-cert p, 
+.dark-mode-cert li,
+.dark-mode-cert .text-muted {
+    color: #a0a0a0 !important; 
+}
+.dark-mode-cert strong {
+    color: #d1d1d1 !important;
+}
+
+/* Button styling */
+.dark-mode-cert .btn {
+    background-color: #a51c30 !important;
+    color: #ffffff !important;
+    border: 1px solid #a51c30 !important; /* Fixed the typo here */
+}
+
+
 /* 11. Live Clock */
 body.dark-mode #liveClock {
     background-color: #1e1e1e !important;
